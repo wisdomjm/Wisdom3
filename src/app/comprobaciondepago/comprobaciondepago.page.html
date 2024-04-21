@@ -1,0 +1,24 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="jmvioleta">
+    <!--ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons-->
+    <!--i class='bx bx-arrow-back' slot="start" (click)="" style="margin-left: 16px; font-size: 18px;"></i-->
+    <ion-title>Wisdom JM</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <h1 class="ion-text-center">Confirmacion de Pago</h1>
+  <ion-card>
+    <ion-card-content>
+      <p><strong>Estado del pago:</strong> {{productoActual.pagostatus}}</p>
+      <p><strong>Descripcion:</strong> {{productoActual.descripcion}}</p>
+      <p><strong>Valor Pagado:</strong> {{productoActual.preciototal}}</p>
+      <p><strong>ID Pago:</strong> {{productoActual.idpago}}</p>
+      <br>
+      
+    </ion-card-content>
+  </ion-card>
+  <ion-button mode="ios" (click)="GoHomeApp()">Volver</ion-button>
+</ion-content>

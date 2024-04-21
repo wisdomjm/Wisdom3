@@ -1,0 +1,69 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="jmvioleta">
+    <ion-label>
+      <h1 class="texto-mediano" style="margin-left: 12px;">Bienvenido</h1>
+      <p class="texto-pequeño" style="margin-left: 12px; color: white;">{{informacionUsuario.nombres}}</p>
+    </ion-label>
+    <ion-avatar slot="end" routerLink="/chatvoice">
+      <img src="../../assets/icon/wisdomlogo.jpg" alt="" style="width: 42px; height: 42px; margin-top: 10px; margin-right: 12px;">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!--Cursos Disponibles-->
+  <ion-label>
+    <h1 class="texto-header">Cursos Disponibles</h1>
+    <br>
+  </ion-label>
+
+  <swiper-container [slidesPerView]="1.5" [spaceBetween]="50">
+    <swiper-slide *ngFor="let cursosDisponibles of cursos">
+      <div class="cursos-disponibles">
+        <div class="image-curso">
+          <img src="{{cursosDisponibles.imagenCurso}}" alt="">
+        </div>
+        <div class="contenido">
+          <h1 class="texto-mediano" 
+              style="margin-top: 5px; margin-left: 2px; text-wrap: pretty; font-weight: 400;">
+              {{cursosDisponibles.nombreCurso}}
+          </h1>
+          <!--p class="texto-pequeño precio" style="margin-top: 5px; margin-left: 12px;">
+            24900 <span><i class='bx bxs-chevron-right texto-mediano'></i></span>
+          </p-->
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+
+  <br>
+  <!--Cursos Recomendados-->
+  <ion-label>
+    <h1 class="texto-header">Adquirir</h1>
+    <br>
+  </ion-label>
+
+  <ion-list>
+    <ion-card *ngFor="let cursosDisponibles of cursos" mode="md">
+      <img alt="" src="{{cursosDisponibles.imagenCurso}}" />
+      <ion-card-header>
+        <ion-card-title>{{cursosDisponibles.nombreCurso}}</ion-card-title>
+        <ion-card-subtitle>{{cursosDisponibles.categoria}}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{cursosDisponibles.descripcionCorta}}
+        <ion-item lines="none">
+          <ion-label>$25</ion-label>
+          <ion-chip slot="end" [routerLink]="['/cursedetail',cursosDisponibles.nombreCurso]">ver</ion-chip>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+
+
+
+</ion-content>
+

@@ -1,0 +1,86 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="jmvioleta">
+    <ion-label>
+      <h1 class="texto-mediano" style="margin-left: 12px;">Perfil</h1>
+    </ion-label>
+    <!--ion-avatar slot="end">
+      <img src="../../assets/icon/wisdomlogo.jpg" alt=""
+        style="width: 42px; height: 42px; margin-top: 10px; margin-right: 12px;">
+    </ion-avatar-->
+    <ion-button color="light" slot="end" (click)="logout()">
+      <i class='bx bx-log-out .texto-mediano'></i>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="image-container">
+    <img src="{{avatarSeleccionado}}" alt="">
+    <div class="btn-profile" (click)="CambiarAvatar()"> <!--(click)="CargarOpcionesParaFoto()"-->
+      <i class='bx bx-images i-color'></i>
+    </div>
+
+
+  </div>
+
+  <div *ngIf="cambiaraVatar">
+    <swiper-container [slidesPerView]="3.5" [spaceBetween]="50">
+      <swiper-slide *ngFor="let avatar of Avatares" >
+        <img src="{{avatar.ruta}}" alt="" style="width: 62px; height: 62px; border-radius: 50%;" (click)="SeleccionarAvatar(avatar.ruta)">
+      </swiper-slide>
+    </swiper-container>
+  </div>
+
+  <ion-list>
+    <!--[(ngModel)]="authData.password"-->
+    <ion-item lines="none">
+      <ion-label>Informacion Personal</ion-label>
+    </ion-item>
+
+
+    <ion-input color="jmvioleta" label="Nombre" label-placement="floating" fill="outline" type="text"
+      placeholder="Nombre" [(ngModel)]="informacionUsuario.nombres">
+      <i class='bx bx-user-circle texto-mediano' slot="start"></i>
+    </ion-input>
+    
+    <br>
+    <ion-input color="jmvioleta" label="Apellidos" label-placement="floating" fill="outline" type="text"
+      placeholder="Apellidos" [(ngModel)]="informacionUsuario.apellidos">
+      <i class='bx bxs-user-circle texto-mediano' slot="start"></i>
+    </ion-input>
+
+
+    <ion-item lines="none">
+      <ion-label>Informacion de Contacto</ion-label>
+    </ion-item>
+
+    <ion-input color="jmvioleta" label="Email" label-placement="floating" fill="outline" type="text"
+      placeholder="user@email.com" [disabled]="true" [(ngModel)]="informacionUsuario.email">
+      <i class='bx bx-mail-send texto-mediano' slot="start"></i>
+    </ion-input>
+
+    <br>
+    <ion-input color="jmvioleta" label="Direccion" label-placement="floating" fill="outline" type="text"
+      placeholder="Tu direccion" [(ngModel)]="informacionUsuario.direccion">
+      <i class='bx bx-map-alt texto-mediano' slot="start"></i>
+    </ion-input>
+
+    <br>
+    <ion-input color="jmvioleta" label="Telefono" label-placement="floating" fill="outline" type="text"
+      placeholder="Tu telefono" [(ngModel)]="informacionUsuario.telefono">
+      <i class='bx bx-phone texto-mediano' slot="start"></i>
+    </ion-input>
+
+    <br>
+    <ion-input color="jmvioleta" label="Pais" label-placement="floating" fill="outline" type="text"
+      placeholder="Tu Pais" [(ngModel)]="informacionUsuario.pais">
+      <i class='bx bx-globe texto-mediano' slot="start"></i>
+    </ion-input>
+
+  </ion-list>
+
+  <ion-button expand="block" color="medium" mode="ios" (click)="ActualizarInformacionDelUsario()">Actualizar</ion-button>
+
+</ion-content>

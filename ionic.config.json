@@ -1,0 +1,7 @@
+{
+  "name": "wisdomapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

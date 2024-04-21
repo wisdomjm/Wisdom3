@@ -1,0 +1,29 @@
+.image-container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    img{
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+    }
+
+    .btn-profile{
+        display: flex;
+        //margin: auto;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(211, 211, 211);
+        width: 22px;
+        height: 22px;
+        border-radius: 8px 8px 8px 8px;
+        margin-top: 40px;
+        margin-left: -20px;
+    }
+}
+
+.i-color{
+    color: rgb(39, 39, 39);
+    font-size: 16px;
+}

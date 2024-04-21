@@ -1,0 +1,41 @@
+<ion-header [translucent]="true" class="ion-no-border" id="header-content"> <!--id="header-content"-->
+  <ion-toolbar>
+    <i class='bx bx-arrow-back' slot="start" (click)="GoHomeApp()" style="margin-left: 16px; font-size: 18px;"></i>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="contenido">
+    <div class="imagen-content">
+      <img src="{{productoActual.imagen}}" alt="">  
+    </div>
+    <h1 class="texto-mediano" style="margin-left: 12px;">{{productoActual.nombre}}</h1>
+    <ion-list class="ion-padding" >
+      <ion-textarea 
+        label="Sobre el Curso:" 
+        labelPlacement="stacked" 
+        lines="none"
+        [(ngModel)]="productoActual.descripcion"    
+      >
+
+      </ion-textarea>
+
+      
+      <p style="font-size: 22px; font-weight: 300; margin-top: 10px;">
+        Precio: ${{productoActual.precio}}
+      </p>
+
+      <div class="vspace"></div>
+      <div class="vspace"></div>
+  </ion-list>
+</div>
+
+
+  <ion-list class="ion-padding">
+    <div id="paypal-buttons"></div>   
+    <script>
+      paypal.Buttons().render("body");
+    </script>
+  </ion-list>
+  
+</ion-content>

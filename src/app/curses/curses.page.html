@@ -1,0 +1,30 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="jmvioleta">
+    <ion-label>
+      <h1 class="texto-mediano" style="margin-left: 12px;">Mis Cursos</h1>
+    </ion-label>
+    <ion-avatar slot="end">
+      <img src="../../assets/icon/wisdomlogo.jpg" alt="" style="width: 42px; height: 42px; margin-top: 10px; margin-right: 12px;">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-list>
+    
+    <!--div  style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;" class="ion-padding"> </div-->
+    <ion-item lines="none" routerLink="/showcurse" *ngFor="let cursos of misCursos">
+      <ion-thumbnail slot="start">
+        <img alt="" src="{{cursos.imagen}}"/>
+      </ion-thumbnail>
+      <ion-label>
+        <h1>{{cursos.nombre}}</h1>
+        <p>{{cursos.descripcion}}</p>
+      </ion-label>
+    </ion-item>
+   
+
+      
+  </ion-list>
+</ion-content>

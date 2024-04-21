@@ -1,0 +1,82 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: 'Rubik', sans-serif;
+}
+
+.main-logo{
+    width: 128px;
+    height: 128px;
+    display: flex;
+    margin: auto;
+  
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+.separador{
+    width: 100%;
+    height: 64px;
+}
+
+.texto-pequeño{
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.texto-mediano{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.texto-grande{
+    font-size: 42px;
+    font-weight: 400;
+}
+
+.texto-header{
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.color-violeta{
+    color: #571089;
+}
+
+ion-input{
+    --border-color: #571089 !important;
+}
+
+ion-input .label-text{
+    color: #571089 !important;
+}

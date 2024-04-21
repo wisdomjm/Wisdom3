@@ -1,0 +1,32 @@
+.header-curse{
+    width: 100%;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 14px;
+    position: fixed;
+    top: 0;
+}
+
+.video-curse{
+    width: 100%;
+    height: 220px;
+    position: fixed;
+    top: 40px;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.curse-content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+    position: fixed;
+    top: 270px;
+}

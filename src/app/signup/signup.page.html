@@ -1,0 +1,59 @@
+
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="separador"></div>
+  <div class="main-logo">
+    <img src="../../assets/icon/wisdomlogo.jpg" alt="">
+  </div>
+  <h1 class="ion-text-center texto-grande">
+    Wisdom JM
+  </h1>
+
+  <div class="separador"></div>
+
+  <ion-list>
+    
+    <ion-input 
+      color="jmvioleta"
+      [(ngModel)]="userToRegister.email"
+      label="Email" 
+      label-placement="floating" 
+      fill="outline"
+      type="text" 
+      placeholder="Email">
+    </ion-input>
+    
+    <br>
+    
+    <ion-input 
+      color="jmvioleta"
+      [(ngModel)]="userToRegister.password"
+      label="Contraseña" 
+      label-placement="floating" 
+      fill="outline"
+      type="{{ mostrarContrasena ? 'text' : 'password' }}"
+      placeholder="Password">
+      <ion-icon name="eye" (click)="mostrarContrasena = !mostrarContrasena" slot="end"></ion-icon>
+    </ion-input>
+   
+
+  </ion-list>
+
+  <ion-button expand="block" color="jmvioleta" (click)="RegisterUser()">Registrate</ion-button>
+  <br>
+
+  <!--p class="ion-text-center texto-pequeño">Si lo prefieres</p>
+  <br>
+
+  <ion-button color="light" expand="block">
+    <i class='bx bxl-google texto-mediano'></i> Google
+  </ion-button-->
+  <div class="separador"></div>
+  <p class="ion-text-center texto-mediano">Tienes una Cuenta? <br> 
+    <Strong 
+      color="jmvioleta" 
+      [routerLink]="['/login']">
+      Log in
+    </Strong>
+  </p>
+</ion-content>

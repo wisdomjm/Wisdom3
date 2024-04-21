@@ -1,0 +1,63 @@
+<!--ion-header [translucent]="true">
+  <ion-toolbar >
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header-->
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="separador"></div>
+  <div class="main-logo">
+    <img src="../../assets/icon/wisdomlogo.jpg" alt="">
+  </div>
+  <h1 class="ion-text-center texto-grande">
+    Wisdom JM
+  </h1>
+
+  <ion-list>
+    
+    <ion-input 
+      color="jmvioleta"
+      [(ngModel)]="authData.email"
+      label="Email" 
+      label-placement="floating" 
+      fill="outline"
+      type="text" 
+      placeholder="Email">
+    </ion-input>
+    
+    <br>
+    
+    <ion-input 
+      color="jmvioleta"
+      [(ngModel)]="authData.password"
+      label="Contraseña" 
+      label-placement="floating" 
+      fill="outline"
+      type="{{ mostrarContrasena ? 'text' : 'password' }}"
+      placeholder="Password">
+      <ion-icon name="eye" (click)="mostrarContrasena = !mostrarContrasena" slot="end"></ion-icon>
+    </ion-input>
+   
+
+  </ion-list>
+
+  <!--[routerLink]="['/tabs/homeapp']"-->
+  <ion-button expand="block" color="jmvioleta" (click)="loginToApp()">Iniciar Sesion</ion-button>
+  <br>
+
+  <!--p class="ion-text-center texto-pequeño">Si lo prefieres</p>
+  <br>
+
+  <ion-button color="light" expand="block" (click)="loginGoogle()">
+    <i class='bx bxl-google texto-mediano'></i> Google
+  </ion-button-->
+  
+  <div class="separador"></div>
+  <p class="ion-text-center texto-mediano">No tienes una Cuenta? <br> 
+    <Strong 
+      color="jmvioleta" 
+      [routerLink]="['/signup']">
+      Registrate  
+    </Strong>
+  </p>
+</ion-content>

@@ -1,0 +1,73 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="jmvioleta">
+    <!--ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons-->
+    <i class='bx bx-arrow-back' slot="start" (click)="GoHomeApp()" style="margin-left: 16px; font-size: 18px;"></i>
+    <ion-title>IA Wisdom</ion-title>
+    <i class='bx bx-globe' style="font-size: 24px; margin-right: 16px;" id="click-trigger" slot="end"></i>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" #content> 
+  
+  <ion-popover trigger="click-trigger" triggerAction="click" mode="ios">
+    <ng-template>
+      <ion-content class="ion-padding">
+        Selecciona un Idioma.
+        <ion-list>
+          <ion-item lines="none" *ngFor="let idioma of listaDeTraduccion" (click)="SeleccionaIdioma(idioma.lenguaje)">
+            <ion-label>{{idioma.lenguaje}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-popover>
+
+  <ion-item lines="none" *ngIf="active">
+    <ion-label class="welcome_text">
+      <h1>IA Wisdowm</h1>
+    </ion-label>
+  </ion-item>
+
+
+  <ion-list>
+    <ion-item lines="none" *ngFor="let data of mChat">
+      <div class="{{data.class}}">
+        <img src="{{data.avatar}}" alt="" class="avatar-circle" *ngIf="data.avatar != 'null'">
+        <h1>{{data.type}}</h1>
+        <p>{{data.message}}</p>
+        <p *ngIf="data.talk" style="color:#3f37c9;">
+          <i class="bx bx-volume-full" style="font-size: 22px;" (click)="Talk(data.message)"></i>
+          <i class="bx bx-stop-circle" style="color:#212529; margin-left: 20px; font-size: 22px;" (click)="stop()"></i> 
+        </p>
+      </div>  
+    </ion-item>
+    <br>
+    <ion-spinner name="circles" color="blueaccent" *ngIf="loading"></ion-spinner>
+  </ion-list>
+
+  <!--ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="hablarAlChat()" *ngIf="!recording">
+    <ion-fab-button color="jmvioleta">
+      <i class='bx bx-microphone' style="font-size: 24px;"></i>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" (click)="dejarDeHablar()" *ngIf="recording">
+    <ion-fab-button color="danger">
+      <i class='bx bx-microphone' style="font-size: 24px;"></i>
+    </ion-fab-button>
+  </ion-fab-->
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <!--div class="input-container box_shadow"></div-->
+      <ion-item lines="none">   
+        <ion-textarea color="blueaccent" placeholder="...Write your Message" [autoGrow]="true" [(ngModel)]="inputText"></ion-textarea>
+        
+      </ion-item>
+      <i class='bx bx-send btn-send' slot="end" (click)="AskQuestion()"></i>
+  </ion-toolbar>
+</ion-footer>

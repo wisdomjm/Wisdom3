@@ -1,0 +1,66 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="jmvioleta">
+    <!--ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons-->
+    <i class='bx bx-arrow-back' slot="start" (click)="GoHomeApp()" style="margin-left: 16px; font-size: 18px;"></i>
+    <ion-label>
+      <h1 class="texto-mediano" style="margin-left: 12px;">{{cursoEncontrado.nombreCurso}}</h1>
+    </ion-label>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <div class="imagen-content">
+    <img src="{{cursoEncontrado.imagenCurso}}" alt="">
+  </div>
+
+  <ion-textarea 
+    label="Sobre el Curso:" 
+    labelPlacement="stacked" 
+    class="ion-padding" 
+    lines="none"
+    [autoGrow]="true"
+    [(ngModel)]="cursoEncontrado.descripcionLarga"  
+    >
+
+  </ion-textarea>
+
+
+  <ion-list class="ion-padding" lines="none">
+    <div *ngFor="let subcursos of cursoEncontrado.subclases; let i=index;"
+      class="ion-padding" 
+      style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; margin-bottom: 16px;">
+      <div *ngIf="i === 0">
+        <h1>{{subcursos.nombreDeSubclase}}</h1>
+        <p>{{subcursos.descripcionDeSubclase}}</p>
+        <video [src]="subcursos.videoDeSubclase" controls type="video/mp4" width="100%" height="240" loop autoplay="false"></video>
+      </div>
+      
+    
+    </div>
+
+
+  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <p style="font-size: 22px; font-weight: 500;">
+          Precio: ${{cursoEncontrado.precio}}
+        </p>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button expand="block" mode="ios" color="jmvioleta" (click)="IrPaginaDePago()">Comprar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<!--FOOTER>
+<ion-footer>
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-footer-->
